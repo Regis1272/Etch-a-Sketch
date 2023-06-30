@@ -10,8 +10,12 @@ function buildGrid(size) {
 		pixel.style.display = 'flex';
 		pixel.style.width = '100%';
 		pixel.style.height = '100%';
-		pixel.style.backgroundColor = bgColor;
+		// pixel.style.backgroundColor = bgColor;
 		// pixel.style.border = borderStyling;
+
+		pixel.addEventListener('mouseenter', () => {
+			drawOn(pixel, currentMode);
+		});
 
 		return pixel;
 	}
@@ -54,17 +58,26 @@ function buildGrid(size) {
 
 }
 
-function drawOn(selector) {
-	selector.style.backgroundColor = brushColor;
-};
+function drawOn(selector, drawMode) {
+	selector.style.backgroundColor = drawMode;
+}
 
+let brushColor = 'purple';
+
+let drawMode_HardColor = function() {
+	return brushColor;
+}
+
+let drawMode_Greyscale = function() {
+	
+}
 
 const display = document.querySelector('.screen');
 
 const bgColor = 'white';
 const borderStyling = '0px solid black';
 
-let brushColor = 'purple';
+let currentMode = drawMode_HardColor();
 
 buildGrid(8);
 
