@@ -7,7 +7,32 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class='screen'>
+	<div class='ui'>
+		
+		<div class='screen'></div>
+			
+		<div class='controls'>
+			<div class='modes'>
+				<div>Painting Modes</div>
+				<button class='mode' id='paletteBtn'>Palette</button>
+				<button class='mode' id='greyscaleBtn'>Greyscale</button>
+				<button class='mode' id='rainbowBtn'>Rainbow</button>
+			</div>
+			<div id='palette'>
+				<label for='colorPicker'>Palette:</label>
+				<input type='color' id='colorPicker'>
+			</div>
+			<div id='resizer'>
+				<label for='screenSlider'>Canvas Grain</label>
+				<input type='range' id='screenSlider' value=16 min=4 max=100>
+			</div>
+			<button id='clear'>Clear</button>
+		</div>
+	</div>
+
+	<div id="footer">
+		<div>Copyright © <a href='https://github.com/Regis1272'>Regis1272</a> 2023</div>
+		<div>Background by <a href='https://pixabay.com/users/ractapopulous-24766/'>ractapopulous</a></div>
 	</div>
 
 	<script src='script.js'></script>
